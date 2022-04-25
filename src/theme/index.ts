@@ -16,6 +16,7 @@ export const base: DefaultTheme = {
   fontWeight: {
     regular: "400",
     medium: "500",
+    bold: "700",
   },
   fontSize: {
     xSmall: "12px",
@@ -24,7 +25,9 @@ export const base: DefaultTheme = {
     medium: "24px",
   },
   lineHeight: {
+    small: "16px",
     regular: "18px",
     medium: "24px",
+    large: "28px",
   },
 };

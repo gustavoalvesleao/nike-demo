@@ -16,6 +16,7 @@ declare module "styled-components" {
     fontWeight: {
       regular: string;
       medium: string;
+      bold: string;
     };
     fontSize: {
       xSmall: string;
@@ -24,8 +25,10 @@ declare module "styled-components" {
       medium: string;
     };
     lineHeight: {
+      small: string;
       regular: string;
       medium: string;
+      large: string;
     };
   }
 }

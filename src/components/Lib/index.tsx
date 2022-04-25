@@ -111,6 +111,27 @@ const TextParagraph = styled.p(({ theme }) => ({
   lineHeight: theme.lineHeight.regular,
 }));
 
+const TextHeader = styled.h2(({ theme }) => ({
+  margin: 0,
+  fontFamily: theme.fontFamily.primary,
+  fontWeight: theme.fontWeight.medium,
+  fontSize: theme.fontSize.regular,
+  color: theme.colors.neutral700,
+  lineHeight: theme.lineHeight.large,
+}));
+
+const Button = styled.button(({ theme }) => ({
+  backgroundColor: theme.colors.primary,
+  color: theme.colors.neutral100,
+  fontFamily: theme.fontFamily.primary,
+  fontWeight: theme.fontWeight.bold,
+  lineHeight: theme.lineHeight.small,
+  borderRadius: "50px",
+  border: `solid 1px ${theme.colors.neutral100}`,
+  padding: "16px 24px",
+  cursor: "pointer",
+}));
+
 export {
   Spinner,
   ErrorIcon,
@@ -123,4 +144,6 @@ export {
   ArrowIcon,
   NikeSKNRSIcon,
   TextParagraph,
+  TextHeader,
+  Button,
 };
