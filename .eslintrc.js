@@ -36,6 +36,8 @@ module.exports = {
         depth: 3,
       },
     ],
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": ["off"],
     "react/jsx-one-expression-per-line": "off",
     "import/extensions": "off",
     "import/prefer-default-export": "off",

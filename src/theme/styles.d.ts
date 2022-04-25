@@ -7,8 +7,10 @@ declare module "styled-components" {
     };
     colors: {
       primary: string;
+      neutral100: string;
       neutral200: string;
       neutral500: string;
+      neutral700: string;
       danger: string;
     };
     fontWeight: {
@@ -16,7 +18,9 @@ declare module "styled-components" {
       medium: string;
     };
     fontSize: {
+      xSmall: string;
       small: string;
+      regular: string;
       medium: string;
     };
     lineHeight: {
