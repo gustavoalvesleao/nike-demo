@@ -34,6 +34,10 @@ const Content = styled.div`
   ${(props) => `@media${props.theme.device.mobile}`} {
     flex-direction: column;
     height: 54px;
+
+    ${NikeSKNRSIcon} {
+      margin-right: 0;
+    }
   }
 `;
 
