@@ -23,6 +23,8 @@ import { ReactComponent as eloIcon } from "assets/pgto_Elo.svg";
 import { ReactComponent as hipercardIcon } from "assets/pgto_Hipercard.svg";
 import { ReactComponent as mastercardIcon } from "assets/pgto_Mastercard.svg";
 import { ReactComponent as visaIcon } from "assets/pgto_Visa.svg";
+import { ReactComponent as minusIcon } from "assets/icon_minus.svg";
+import { ReactComponent as plusIcon } from "assets/icon_plus.svg";
 
 const rotate = keyframes`
   0% {
@@ -127,6 +129,8 @@ const EloIcon = styled(eloIcon)({});
 const HipercardIcon = styled(hipercardIcon)({});
 const MastercardIcon = styled(mastercardIcon)({});
 const VisaIcon = styled(visaIcon)({});
+const PlusIcon = styled(plusIcon)({});
+const MinusIcon = styled(minusIcon)({});
 
 BagIcon.defaultProps = { "aria-label": "bag-icon" };
 NikeIcon.defaultProps = { "aria-label": "nike-icon" };
@@ -209,4 +213,6 @@ export {
   HipercardIcon,
   MastercardIcon,
   VisaIcon,
+  PlusIcon,
+  MinusIcon,
 };
