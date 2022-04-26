@@ -13,6 +13,16 @@ import { ReactComponent as MenuMobileIcon } from "assets/menu-hamburguer.svg";
 import { ReactComponent as ArrowLeft } from "assets/icon_seta_esquerda.svg";
 import { ReactComponent as ArrowRight } from "assets/icon_seta_direita.svg";
 import { ReactComponent as nikeSKNRSIcon } from "assets/logo_nike_snkrs.svg";
+import { ReactComponent as facebookIcon } from "assets/logo_redes_sociais_facebook.svg";
+import { ReactComponent as instagramIcon } from "assets/logo_redes_sociais_instagram.svg";
+import { ReactComponent as youtubeIcon } from "assets/logo_redes_sociais_youtube.svg";
+import { ReactComponent as amexIcon } from "assets/pgto_Amex.svg";
+import { ReactComponent as boletoIcon } from "assets/pgto_Boleto.svg";
+import { ReactComponent as discoverIcon } from "assets/pgto_Discover.svg";
+import { ReactComponent as eloIcon } from "assets/pgto_Elo.svg";
+import { ReactComponent as hipercardIcon } from "assets/pgto_Hipercard.svg";
+import { ReactComponent as mastercardIcon } from "assets/pgto_Mastercard.svg";
+import { ReactComponent as visaIcon } from "assets/pgto_Visa.svg";
 
 const rotate = keyframes`
   0% {
@@ -94,6 +104,29 @@ const SNKRSIcon = styled(sNKRSIcon)({});
 const BagIcon = styled(bagIcon)({});
 const NikeIcon = styled(nikeIcon)({});
 const NikeSKNRSIcon = styled(nikeSKNRSIcon)({});
+const FacebookIcon = styled(facebookIcon)(({ theme }) => ({
+  "& path": {
+    fill: theme.colors.neutral500,
+  },
+}));
+const InstagramIcon = styled(instagramIcon)(({ theme }) => ({
+  "& path": {
+    fill: theme.colors.neutral500,
+  },
+}));
+const YoutubeIcon = styled(youtubeIcon)(({ theme }) => ({
+  "& path": {
+    fill: theme.colors.neutral500,
+  },
+}));
+
+const AmexIcon = styled(amexIcon)({});
+const BoletoIcon = styled(boletoIcon)({});
+const DiscoverIcon = styled(discoverIcon)({});
+const EloIcon = styled(eloIcon)({});
+const HipercardIcon = styled(hipercardIcon)({});
+const MastercardIcon = styled(mastercardIcon)({});
+const VisaIcon = styled(visaIcon)({});
 
 BagIcon.defaultProps = { "aria-label": "bag-icon" };
 NikeIcon.defaultProps = { "aria-label": "nike-icon" };
@@ -101,6 +134,16 @@ SNKRSIcon.defaultProps = { "aria-label": "SNKRS-icon" };
 JordanIcon.defaultProps = { "aria-label": "Jordan-icon" };
 MenuMobileIcon.defaultProps = { "aria-label": "menu-mobile-icon" };
 NikeSKNRSIcon.defaultProps = { "aria-label": "nike-SNKRS-icon" };
+FacebookIcon.defaultProps = { "aria-label": "facebook-icon" };
+InstagramIcon.defaultProps = { "aria-label": "instagram-icon" };
+YoutubeIcon.defaultProps = { "aria-label": "youtube-icon" };
+AmexIcon.defaultProps = { "aria-label": "amex-icon" };
+BoletoIcon.defaultProps = { "aria-label": "boleto-icon" };
+DiscoverIcon.defaultProps = { "aria-label": "discover-icon" };
+EloIcon.defaultProps = { "aria-label": "elo-icon" };
+HipercardIcon.defaultProps = { "aria-label": "hipercard-icon" };
+MastercardIcon.defaultProps = { "aria-label": "mastercard-icon" };
+VisaIcon.defaultProps = { "aria-label": "visa-icon" };
 
 const TextParagraph = styled.p(({ theme }) => ({
   margin: 0,
@@ -132,6 +175,15 @@ const Button = styled.button(({ theme }) => ({
   cursor: "pointer",
 }));
 
+const Link = styled.a(({ theme }) => ({
+  fontFamily: theme.fontFamily.primary,
+  fontWeight: theme.fontWeight.regular,
+  fontSize: theme.fontSize.xSmall,
+  lineHeight: theme.lineHeight.regular,
+  color: theme.colors.neutral500,
+  textDecoration: "none",
+}));
+
 export {
   Spinner,
   ErrorIcon,
@@ -146,4 +198,15 @@ export {
   TextParagraph,
   TextHeader,
   Button,
+  Link,
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  AmexIcon,
+  BoletoIcon,
+  DiscoverIcon,
+  EloIcon,
+  HipercardIcon,
+  MastercardIcon,
+  VisaIcon,
 };

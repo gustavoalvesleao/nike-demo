@@ -1,21 +1,12 @@
 import styled from "styled-components";
 
-import { BagIcon, NikeIcon, SNKRSIcon } from "components/Lib";
+import { BagIcon, NikeIcon, SNKRSIcon, Link } from "components/Lib";
 
 const TopBar = styled.header({
   position: "fixed",
   width: "100%",
   zIndex: "20",
 });
-
-const Link = styled.a(({ theme }) => ({
-  fontFamily: theme.fontFamily.primary,
-  fontWeight: theme.fontWeight.regular,
-  fontSize: theme.fontSize.xSmall,
-  lineHeight: theme.lineHeight.regular,
-  color: theme.colors.neutral500,
-  textDecoration: "none",
-}));
 
 const LinkHeader = styled(Link)(({ theme }) => ({
   fontFamily: theme.fontFamily.primary,

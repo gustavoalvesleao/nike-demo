@@ -9,7 +9,9 @@ declare module "styled-components" {
       primary: string;
       neutral100: string;
       neutral200: string;
+      neutral300: string;
       neutral500: string;
+      neutral600: string;
       neutral700: string;
       danger: string;
     };
@@ -32,6 +34,7 @@ declare module "styled-components" {
     };
     device: {
       mobile: string;
+      desktop: string;
     };
   }
 }

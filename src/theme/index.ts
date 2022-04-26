@@ -9,7 +9,9 @@ export const base: DefaultTheme = {
     primary: "#000",
     neutral100: "#FFFFFF",
     neutral200: "#F7F7F7",
+    neutral300: "#D6D6D6",
     neutral500: "#737373",
+    neutral600: "#4D4D4D",
     neutral700: "#1A1A1A",
     danger: "#ef5350",
   },
@@ -32,5 +34,6 @@ export const base: DefaultTheme = {
   },
   device: {
     mobile: "(max-width: 960px)",
+    desktop: "(min-width: 960px)",
   },
 };

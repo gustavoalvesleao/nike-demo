@@ -5,6 +5,7 @@ import styled from "styled-components/macro";
 
 import Header from "components/Header";
 import Newsletter from "components/Newsletter";
+import Footer from "components/Footer";
 
 import { base } from "./theme";
 
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <div css={{ height: "200px" }} />
       <Newsletter />
+      <Footer />
     </ThemeProvider>
   );
 }
