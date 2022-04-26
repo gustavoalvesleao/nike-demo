@@ -1,12 +1,15 @@
 import React from "react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styled from "styled-components/macro";
+import { useTheme } from "styled-components";
 
 import { ArrowIcon, NikeSKNRSIcon, TextParagraph } from "components/Lib";
 
 import { Container, Content } from "./styles";
 
 function AnnouncementsBanner() {
+  const theme = useTheme();
+
   return (
     <Container>
       <ArrowIcon
@@ -14,7 +17,7 @@ function AnnouncementsBanner() {
         variant="left"
         cssProperties={{
           marginLeft: "12%",
-          "@media(max-width: 960px)": {
+          [`@media${theme.device.mobile}`]: {
             marginLeft: "4%",
           },
         }}
@@ -30,7 +33,7 @@ function AnnouncementsBanner() {
         variant="right"
         cssProperties={{
           marginRight: "12%",
-          "@media(max-width: 960px)": {
+          [`@media${theme.device.mobile}`]: {
             marginRight: "4%",
           },
         }}

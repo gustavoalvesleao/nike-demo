@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTheme } from "styled-components";
+
 import {
   BagIcon,
   NikeIcon,
@@ -26,12 +28,19 @@ import {
 } from "./styles";
 
 function Header() {
-  const isDesktop = useMediaQuery("(min-width: 960px)");
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.device.mobile);
 
   return (
     <>
       <TopBar>
-        {isDesktop ? (
+        {isMobile ? (
+          <NavMobile>
+            <NikeIcon />
+            <BagIcon />
+            <MenuMobileIcon />
+          </NavMobile>
+        ) : (
           <>
             <NavDesktop>
               <JordanIcon />
@@ -63,12 +72,6 @@ function Header() {
               <BagIcon />
             </CategoriesBar>
           </>
-        ) : (
-          <NavMobile>
-            <NikeIcon />
-            <BagIcon />
-            <MenuMobileIcon />
-          </NavMobile>
         )}
       </TopBar>
       <VerticalSpace />

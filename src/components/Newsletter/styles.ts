@@ -23,7 +23,7 @@ const Container = styled.div`
     margin-bottom: 16px;
   }
 
-  @media(max-width: 960px) {
+  ${(props) => `@media${props.theme.device.mobile}`} {
     padding: 64px 16px 64px 16px 
   },
 `;

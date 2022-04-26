@@ -99,12 +99,12 @@ const VerticalLine = styled.div((props) => ({
   marginLeft: "16px",
 }));
 
-const VerticalSpace = styled.div({
+const VerticalSpace = styled.div(({ theme }) => ({
   height: "128px",
-  "@media(max-width: 960px)": {
+  [`@media${theme.device.mobile}`]: {
     height: "56px",
   },
-});
+}));
 
 export {
   TopBar,

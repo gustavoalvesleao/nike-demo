@@ -30,5 +30,8 @@ declare module "styled-components" {
       medium: string;
       large: string;
     };
+    device: {
+      mobile: string;
+    };
   }
 }

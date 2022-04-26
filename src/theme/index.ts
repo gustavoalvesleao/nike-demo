@@ -30,4 +30,7 @@ export const base: DefaultTheme = {
     medium: "24px",
     large: "28px",
   },
+  device: {
+    mobile: "(max-width: 960px)",
+  },
 };

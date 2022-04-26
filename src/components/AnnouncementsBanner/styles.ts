@@ -10,7 +10,7 @@ const Container = styled.div(({ theme }) => ({
   backgroundColor: theme.colors.neutral200,
   height: "40px",
 
-  "@media(max-width: 960px)": {
+  [`@media${theme.device.mobile}`]: {
     height: "54px",
   },
 }));
@@ -31,10 +31,10 @@ const Content = styled.div`
     }
   }
 
-  @media (max-width: 960px) {
+  ${(props) => `@media${props.theme.device.mobile}`} {
     flex-direction: column;
     height: 54px;
-  } ;
+  }
 `;
 
 export { Container, Content };
