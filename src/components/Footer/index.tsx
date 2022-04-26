@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTheme } from "styled-components";
+
 import {
   AmexIcon,
   BoletoIcon,
@@ -16,6 +18,10 @@ import {
   YoutubeIcon,
 } from "components/Lib";
 
+import { useMediaQuery } from "hooks/useMediaQuery";
+
+import Accordion from "components/Accordion";
+
 import {
   Container,
   FooterNote,
@@ -24,9 +30,61 @@ import {
   LinkBold,
   Payments,
   SocialMedia,
+  MobileInfoContainer,
 } from "./styles";
 
+function HelpLinks() {
+  return (
+    <>
+      <Link href="/">Dúvidas Gerais</Link>
+      <Link href="/">Encontre seu Tamanho</Link>
+      <Link href="/">Entregas</Link>
+      <Link href="/">Pedidos</Link>
+      <Link href="/">Trocas e Devoluções</Link>
+      <Link href="/">Editar consentimento</Link>
+      <Link href="/">Preferências de Cookie</Link>
+      <Link href="/">Pagamentos</Link>
+      <Link href="/">Produtos</Link>
+      <Link href="/">Corporativo</Link>
+      <Link href="/">Fale Conosco</Link>
+    </>
+  );
+}
+
+function AboutLinks() {
+  return (
+    <>
+      <Link href="/">Feito para Jogar</Link>
+      <Link href="/">Sustentabilidade</Link>
+    </>
+  );
+}
+
+const mobileAccordionContent = [
+  {
+    id: "help",
+    title: <TextHeader>AJUDA</TextHeader>,
+    content: (
+      <MobileInfoContainer>
+        <HelpLinks />
+      </MobileInfoContainer>
+    ),
+  },
+  {
+    id: "about",
+    title: <TextHeader>SOBRE A NIKE</TextHeader>,
+    content: (
+      <MobileInfoContainer>
+        <AboutLinks />
+      </MobileInfoContainer>
+    ),
+  },
+];
+
 function Footer() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.device.mobile);
+
   return (
     <Container>
       <InfoContainerWrapper>
@@ -35,25 +93,20 @@ function Footer() {
           <LinkBold href="/">CADASTRE-SE PARA RECEBER NOVIDADES</LinkBold>
           <LinkBold href="/">MAPA DO SITE</LinkBold>
         </InfoContainer>
-        <InfoContainer>
-          <TextHeader>AJUDA</TextHeader>
-          <Link href="/">Dúvidas Gerais</Link>
-          <Link href="/">Encontre seu Tamanho</Link>
-          <Link href="/">Entregas</Link>
-          <Link href="/">Pedidos</Link>
-          <Link href="/">Trocas e Devoluções</Link>
-          <Link href="/">Editar consentimento</Link>
-          <Link href="/">Preferências de Cookie</Link>
-          <Link href="/">Pagamentos</Link>
-          <Link href="/">Produtos</Link>
-          <Link href="/">Corporativo</Link>
-          <Link href="/">Fale Conosco</Link>
-        </InfoContainer>
-        <InfoContainer>
-          <TextHeader>SOBRE A NIKE</TextHeader>
-          <Link href="/">Feito para Jogar</Link>
-          <Link href="/">Sustentabilidade</Link>
-        </InfoContainer>
+        {isMobile ? (
+          <Accordion contents={mobileAccordionContent} />
+        ) : (
+          <>
+            <InfoContainer>
+              <TextHeader>AJUDA</TextHeader>
+              <HelpLinks />
+            </InfoContainer>
+            <InfoContainer>
+              <TextHeader>SOBRE A NIKE</TextHeader>
+              <AboutLinks />
+            </InfoContainer>
+          </>
+        )}
         <InfoContainer>
           <div>
             <SocialMedia>

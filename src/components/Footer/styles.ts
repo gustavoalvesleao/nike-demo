@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { TextHeader, Link, TextParagraph } from "components/Lib";
+import { AccordionContainer } from "components/Accordion/styles";
 
 const Container = styled.div`
   padding: 40px;
@@ -18,6 +19,15 @@ const Container = styled.div`
   ${Link} {
     color: ${(props) => props.theme.colors.neutral200};
     line-height: ${(props) => props.theme.lineHeight.medium};
+  }
+
+  ${AccordionContainer} {
+    margin-bottom: 24px;
+
+    ${Link} {
+      margin-bottom: 8px;
+      line-height: ${(props) => props.theme.lineHeight.regular};
+    }
   }
 `;
 
@@ -60,6 +70,7 @@ const InfoContainer = styled.div`
 
   ${Link} {
     margin-bottom: 16px;
+    line-height: ${(props) => props.theme.lineHeight.regular};
   }
 
   ${(props) => `@media${props.theme.device.mobile}`}  {
@@ -69,6 +80,11 @@ const InfoContainer = styled.div`
     border-bottom-color: ${(props) => props.theme.colors.neutral600};
     border-bottom-width: 1px;
   },
+`;
+
+const MobileInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const SocialMedia = styled.div`
@@ -146,4 +162,5 @@ export {
   SocialMedia,
   Payments,
   FooterNote,
+  MobileInfoContainer,
 };
