@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { CSSObject } from "styled-components";
 
-import { ErrorIcon, SearchIcon, Spinner } from "components/Lib";
+import { Button, ErrorIcon, SearchIcon, Spinner } from "components/Lib";
 
 import { SearchFormElements } from "./types";
 
@@ -15,6 +15,7 @@ interface Props {
   isError?: boolean;
   placeholder?: string;
   cssProperties?: CSSObject;
+  renderSearchButton?: boolean;
 }
 
 function InputSearch({
@@ -23,6 +24,7 @@ function InputSearch({
   isError = false,
   placeholder = "Buscar...",
   cssProperties,
+  renderSearchButton = false,
 }: Props) {
   const handleSearchSubmit = (e: React.FormEvent<SearchFormElements>) => {
     e.preventDefault();
@@ -59,6 +61,11 @@ function InputSearch({
         id="search"
         css={{ width: "100%", paddingLeft: "44px", ...cssProperties }}
       />
+      {renderSearchButton && (
+        <Button type="submit" css={{ marginLeft: "24px" }}>
+          Buscar
+        </Button>
+      )}
     </form>
   );
 }
