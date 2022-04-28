@@ -13,6 +13,7 @@ export const base: DefaultTheme = {
     neutral500: "#737373",
     neutral600: "#4D4D4D",
     neutral700: "#1A1A1A",
+    success300: "#006611",
     danger: "#ef5350",
   },
   fontWeight: {
@@ -25,10 +26,12 @@ export const base: DefaultTheme = {
     small: "14px",
     regular: "16px",
     medium: "24px",
+    large: "32px",
   },
   lineHeight: {
     small: "16px",
     regular: "18px",
+    sMedium: "21px",
     medium: "24px",
     large: "28px",
   },

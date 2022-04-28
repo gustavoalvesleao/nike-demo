@@ -22,15 +22,13 @@ async function client(
     ...customConfig,
   };
 
-  return window
-    .fetch(`${apiURL}/${endpoint}`, config)
-    .then(async (response) => {
-      const data = await response.json();
-      if (response.ok) {
-        return data;
-      }
-      return Promise.reject(data);
-    });
+  return window.fetch(`${apiURL}${endpoint}`, config).then(async (response) => {
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    }
+    return Promise.reject(data);
+  });
 }
 
 export { client };

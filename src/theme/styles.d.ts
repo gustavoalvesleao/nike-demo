@@ -13,6 +13,7 @@ declare module "styled-components" {
       neutral500: string;
       neutral600: string;
       neutral700: string;
+      success300: string;
       danger: string;
     };
     fontWeight: {
@@ -25,11 +26,13 @@ declare module "styled-components" {
       small: string;
       regular: string;
       medium: string;
+      large: string;
     };
     lineHeight: {
       small: string;
       regular: string;
       medium: string;
+      sMedium: string;
       large: string;
     };
     device: {

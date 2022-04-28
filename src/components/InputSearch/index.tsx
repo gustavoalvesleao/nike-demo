@@ -16,6 +16,7 @@ interface Props {
   placeholder?: string;
   cssProperties?: CSSObject;
   renderSearchButton?: boolean;
+  ariaLabel?: string;
 }
 
 function InputSearch({
@@ -25,6 +26,7 @@ function InputSearch({
   placeholder = "Buscar...",
   cssProperties,
   renderSearchButton = false,
+  ariaLabel,
 }: Props) {
   const handleSearchSubmit = (e: React.FormEvent<SearchFormElements>) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ function InputSearch({
     >
       <label htmlFor="search" css={{ marginRight: "-35px" }}>
         <button
+          aria-label={ariaLabel}
           type="submit"
           css={{
             border: "0",
@@ -57,12 +60,18 @@ function InputSearch({
         </button>
       </label>
       <Input
+        aria-label={placeholder}
         placeholder={placeholder}
         id="search"
         css={{ width: "100%", paddingLeft: "44px", ...cssProperties }}
       />
       {renderSearchButton && (
-        <Button type="submit" css={{ marginLeft: "24px" }}>
+        <Button
+          aria-label={ariaLabel}
+          type="submit"
+          role="button"
+          css={{ marginLeft: "24px" }}
+        >
           Buscar
         </Button>
       )}

@@ -67,4 +67,4 @@ const getStores = (
 };
 
 export { getStores };
-export type { InputStores, Point };
+export type { Store, InputStores, Point, ResultStore, ResultStores };

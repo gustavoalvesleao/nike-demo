@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { CSSObject, css, keyframes } from "styled-components";
+import { CSSObject, css, keyframes, useTheme } from "styled-components";
+import L from "leaflet";
 
 import { ReactComponent as loadingIcon } from "assets/spinner.svg";
 import { ReactComponent as errorIcon } from "assets/Error.svg";
@@ -12,6 +13,7 @@ import { ReactComponent as JordanIcon } from "assets/logo_Jordan.svg";
 import { ReactComponent as MenuMobileIcon } from "assets/menu-hamburguer.svg";
 import { ReactComponent as ArrowLeft } from "assets/icon_seta_esquerda.svg";
 import { ReactComponent as ArrowRight } from "assets/icon_seta_direita.svg";
+import { ReactComponent as arrowDown } from "assets/icon_seta_baixo.svg";
 import { ReactComponent as nikeSKNRSIcon } from "assets/logo_nike_snkrs.svg";
 import { ReactComponent as facebookIcon } from "assets/logo_redes_sociais_facebook.svg";
 import { ReactComponent as instagramIcon } from "assets/logo_redes_sociais_instagram.svg";
@@ -25,6 +27,9 @@ import { ReactComponent as mastercardIcon } from "assets/pgto_Mastercard.svg";
 import { ReactComponent as visaIcon } from "assets/pgto_Visa.svg";
 import { ReactComponent as minusIcon } from "assets/icon_minus.svg";
 import { ReactComponent as plusIcon } from "assets/icon_plus.svg";
+import PinIcon from "assets/icon_pin_mapa.svg";
+import { ReactComponent as closeIcon } from "assets/icon_close.svg";
+import { ReactComponent as pinLinkIcon } from "assets/icon_pin_link.svg";
 
 const rotate = keyframes`
   0% {
@@ -62,6 +67,55 @@ const SearchIcon = styled(searchIcon)({
   ...iconDefaultSize,
 });
 SearchIcon.defaultProps = { "aria-label": "buscar" };
+
+const errorMessageVariants = {
+  stacked: { display: "block" },
+  inline: { display: "inline-block" },
+};
+
+function ErrorMessage({
+  error,
+  variant = "stacked",
+  ...props
+}: {
+  error: Error | null | undefined;
+  variant?: keyof typeof errorMessageVariants;
+}) {
+  const theme = useTheme();
+
+  return (
+    <div
+      role="alert"
+      css={[{ color: theme.colors.danger }, errorMessageVariants[variant]]}
+      {...props}
+    >
+      <pre
+        css={[
+          { whiteSpace: "break-spaces", margin: "0", marginBottom: -5 },
+          errorMessageVariants[variant],
+        ]}
+      >
+        {error?.message}
+      </pre>
+    </div>
+  );
+}
+
+function FullPageSpinner() {
+  return (
+    <div
+      css={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Spinner css={{ width: "55px", height: "55px" }} />
+    </div>
+  );
+}
 
 function ArrowIcon({
   onClick,
@@ -131,6 +185,9 @@ const MastercardIcon = styled(mastercardIcon)({});
 const VisaIcon = styled(visaIcon)({});
 const PlusIcon = styled(plusIcon)({});
 const MinusIcon = styled(minusIcon)({});
+const ArrowDown = styled(arrowDown)({});
+const CloseIcon = styled(closeIcon)({});
+const PinLinkIcon = styled(pinLinkIcon)({});
 
 BagIcon.defaultProps = { "aria-label": "bag-icon" };
 NikeIcon.defaultProps = { "aria-label": "nike-icon" };
@@ -148,6 +205,8 @@ EloIcon.defaultProps = { "aria-label": "elo-icon" };
 HipercardIcon.defaultProps = { "aria-label": "hipercard-icon" };
 MastercardIcon.defaultProps = { "aria-label": "mastercard-icon" };
 VisaIcon.defaultProps = { "aria-label": "visa-icon" };
+CloseIcon.defaultProps = { "aria-label": "close-icon" };
+PinLinkIcon.defaultProps = { "aria-label": "pin-link-icon" };
 
 const TextParagraph = styled.p(({ theme }) => ({
   margin: 0,
@@ -188,6 +247,12 @@ const Link = styled.a(({ theme }) => ({
   textDecoration: "none",
 }));
 
+const customMarkerIcon = new L.Icon({
+  iconUrl: PinIcon,
+  iconRetinaUrl: PinIcon,
+  iconSize: [35, 44],
+});
+
 export {
   Spinner,
   ErrorIcon,
@@ -215,4 +280,10 @@ export {
   VisaIcon,
   PlusIcon,
   MinusIcon,
+  customMarkerIcon,
+  ArrowDown,
+  ErrorMessage,
+  CloseIcon,
+  PinLinkIcon,
+  FullPageSpinner,
 };

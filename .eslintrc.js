@@ -63,7 +63,12 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       {
-        devDependencies: ["**/*.test.ts", "**/*.test.tsx", "src/test/**"],
+        devDependencies: [
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "src/test/**",
+          "**/*handlers.ts",
+        ],
       },
     ],
     "import/order": [
